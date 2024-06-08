@@ -1,0 +1,7 @@
+{
+  "name": "LifeBalance",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
