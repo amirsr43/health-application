@@ -1,27 +1,66 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+/* home.page.scss */
+.container {
+  padding: 16px;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.summary-card, .chart-card, .workout-card, .tips-card {
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --ion-card-background: linear-gradient(to right, #ffffff, #f8f9fa);
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+ion-card-title {
+  font-size: 1.6em;
+  font-weight: bold;
 }
 
-#container a {
-  text-decoration: none;
+.activity-icon {
+  margin-bottom: 8px;
+}
+
+.steps {
+  color: #4caf50;
+}
+
+.calories {
+  color: #ff5722;
+}
+
+.water {
+  color: #2196f3;
+}
+
+.activity p {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.quick-buttons ion-col {
+  margin-bottom: 10px;
+}
+
+ion-button {
+  --border-radius: 12px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  font-size: 0.9em;
+}
+
+.workout-chip {
+  font-size: 1.2em;
+  padding: 10px;
+  --background: #4caf50;
+  --color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tips-card ion-item {
+  --background: #f8f9fa;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.tips-card ion-item ion-icon {
+  font-size: 1.4em;
 }
