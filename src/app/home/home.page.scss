@@ -1,4 +1,11 @@
-/* home.page.scss */
+.color {
+  --background: linear-gradient(to right, #40A578, #006769);
+}
+
+ion-title {
+  color: white;
+}
+
 .container {
   padding: 16px;
 }

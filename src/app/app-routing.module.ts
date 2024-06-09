@@ -8,8 +8,28 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+  },
+  {
+    path: 'activity',
+    loadChildren: () => import('./activity/activity.module').then( m => m.ActivityPageModule)
+  },
+  {
+    path: 'nutrition',
+    loadChildren: () => import('./nutrition/nutrition.module').then( m => m.NutritionPageModule)
+  },
+  {
+    path: 'hydration',
+    loadChildren: () => import('./hydration/hydration.module').then( m => m.HydrationPageModule)
+  },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
 ];
 

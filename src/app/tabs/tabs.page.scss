@@ -1,0 +1,108 @@
+/* Mengatur warna dan ukuran tab bar */
+ion-tab-bar {
+    border-top: 1px solid #e0e0e0; /* Garis tipis di bagian atas tab bar */
+    height: 60px; /* Tinggi tab bar */
+    border-radius: 20px 20px 0 0; /* Membuat sudut melengkung di bagian atas */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+    padding: 5px 0; /* Padding di dalam tab bar */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transisi latar belakang dan bayangan */
+}
+
+/* Gaya untuk tombol tab */
+ion-tab-button {
+    color: #808080; /* Warna ikon dan label default */
+    font-size: 14px; /* Ukuran font label */
+    transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease; /* Transisi warna, transformasi, dan latar belakang */
+    border-radius: 50%; /* Sudut melengkung pada tombol */
+    padding: 10px; /* Padding di dalam tombol */
+    position: relative; /* Untuk efek setelah */
+    overflow: hidden; /* Menyembunyikan konten overflow */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px; /* Jarak antar tombol */
+}
+
+/* Gaya untuk ikon di dalam tombol tab */
+ion-tab-button ion-icon {
+    font-size: 24px; /* Ukuran ikon */
+    margin-bottom: 4px; /* Jarak ikon dengan label */
+}
+
+/* Gaya untuk tombol tab yang aktif */
+ion-tab-button.tab-selected {
+    color: #006769; /* Warna ikon dan label saat aktif */
+    font-weight: bold; /* Tebal label saat aktif */
+    transform: scale(1.1); /* Skala ikon dan label saat aktif */
+    background-color: rgba(0, 103, 105, 0.1); /* Latar belakang tombol saat aktif */
+    box-shadow: 0 0 10px rgba(0, 103, 105, 0.5); /* Bayangan tombol saat aktif */
+}
+
+/* Gaya untuk label di dalam tombol tab */
+ion-tab-button ion-label {
+    margin-top: 2px; /* Jarak antara label dan ikon */
+}
+
+/* Hover effect untuk tombol tab */
+ion-tab-button:hover {
+    color: #006769; /* Warna ikon dan label saat di-hover */
+    transform: scale(1.05); /* Skala ikon dan label saat di-hover */
+    background-color: rgba(0, 103, 105, 0.1); /* Latar belakang tombol saat di-hover */
+}
+
+/* Efek cahaya pada hover */
+ion-tab-button:hover::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(0, 103, 105, 0.2); /* Warna efek cahaya */
+    border-radius: 50%; /* Bentuk lingkaran */
+    filter: blur(15px); /* Efek blur */
+    z-index: -1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Menghilangkan efek cahaya saat tidak di-hover */
+ion-tab-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(0, 103, 105, 0.2);
+    border-radius: 50%;
+    filter: blur(15px);
+    z-index: -1;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Efek animasi pada tab bar saat fokus */
+ion-tab-bar:focus-within {
+    background-color: #f5f5f5; /* Warna latar belakang saat fokus */
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2); /* Bayangan lebih besar saat fokus */
+}
+
+/* Efek khusus untuk tombol home */
+ion-tab-button[tab="home"] {
+    background: linear-gradient(135deg, #006769, #40A578); /* Gradien warna untuk tombol home */
+    color: #ffffff; /* Warna ikon dan label untuk tombol home */
+    box-shadow: 0 4px 15px rgba(226, 226, 226, 0.6); /* Bayangan lebih besar untuk tombol home */
+    border: 2px solid #ffffff; /* Garis luar putih */
+    transform: scale(1.2); /* Sedikit lebih besar */
+    transition: all 0.3s ease; /* Transisi halus untuk semua perubahan */
+}
+
+/* Hover effect khusus untuk tombol home */
+ion-tab-button[tab="home"]:hover {
+    background: linear-gradient(135deg, #40A578, #006769); /* Warna gradien saat di-hover */
+    box-shadow: 0 6px 20px rgba(243, 243, 243, 0.8); /* Bayangan lebih besar saat di-hover */
+    transform: scale(1.25); /* Skala sedikit lebih besar saat di-hover */
+}
