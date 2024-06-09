@@ -1,13 +1,61 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>nutrition</ion-title>
+<ion-header>
+  <ion-toolbar class="color">
+    <ion-title class="ion-text-center">Nutrition</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">nutrition</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Log Makanan</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item class="input-item">
+          <ion-label position="floating">Nama Makanan</ion-label>
+          <ion-input [(ngModel)]="foodName"></ion-input>
+        </ion-item>
+        <ion-item class="input-item">
+          <ion-label position="floating">Jumlah Kalori</ion-label>
+          <ion-input [(ngModel)]="calories" type="number"></ion-input>
+        </ion-item>
+        <ion-button expand="full" (click)="addFood()" class="text">Tambah Makanan</ion-button>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Asupan Kalori</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let food of foodLog">
+            {{food.name}} - {{food.calories}} Kalori
+          </ion-item>
+        </ion-list>
+        <ion-item>
+          <ion-label>Total Kalori: {{totalCalories}}</ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Rencana Makanan</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label>Sarapan: {{mealPlan.breakfast}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Makan Siang: {{mealPlan.lunch}}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Makan Malam: {{mealPlan.dinner}}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
